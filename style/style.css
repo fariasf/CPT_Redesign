@@ -1,0 +1,115 @@
+.site-container header .logo-section {
+  padding: 0 40px;
+}
+.site-container header .logo-section .cpt-logo {
+  max-height: 100px;
+  padding: 20px 40px;
+}
+.site-container header .logo-section .subscribe-logo {
+  max-height: 44px;
+  width: 220px;
+  float: right;
+  padding: 55px;
+}
+.site-container header .nav-bar {
+  display: flex;
+  height: 50px;
+  background: black;
+  padding: 0 100px;
+}
+.site-container header .nav-bar .menu-items {
+  display: flex;
+}
+.site-container header .nav-bar .menu-items li, .site-container header .nav-bar .menu-items .menu-options {
+  color: #ffc10e;
+  display: inline-block;
+  word-spacing: 2px;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 2.5;
+  padding-left: 20px;
+}
+.site-container header .nav-bar .menu-items .menu-options {
+  border-right: 1px solid #ffc10e;
+  padding-right: 20px;
+}
+.site-container header .nav-bar .search-form {
+  display: flex;
+  margin-left: auto;
+}
+.site-container header .nav-bar .search-form #search {
+  color: black;
+  font-size: 20px;
+  margin: 4px 0;
+  padding: 7px 10px;
+  width: 250px;
+}
+.site-container header .nav-bar .search-form .submit {
+  background-image: url(images/search-icon-light.svg);
+  height: 42px;
+  width: 40px;
+  margin: 4px 0;
+  background-position: 50%;
+}
+
+/* content styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.site-container .newsletter {
+  color: #ffeb3c;
+  height: 30px;
+  text-align: center;
+  line-height: 29px;
+  padding: 15px 0;
+  border-bottom: 1px solid #808080 54;
+  font-size: 25px;
+}
+.site-container .advertisement, .site-container footer {
+  padding: 50px 0;
+  text-align: center;
+}
+.site-container .advertisement {
+  background: #808080;
+}
+.site-container footer {
+  background: #ffa500;
+}
+.site-container .social-content-sidebar:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.site-container .social-content-sidebar .social-icons {
+  width: 15%;
+  float: left;
+  background: #00ffd2;
+  height: -webkit-fill-available;
+}
+.site-container .social-content-sidebar .content-wrapper {
+  width: 85%;
+  float: right;
+}
+.site-container .social-content-sidebar .content-wrapper .content {
+  float: left;
+  width: 70%;
+}
+.site-container .social-content-sidebar .content-wrapper .content h2 {
+  font-size: 38px;
+}
+.site-container .social-content-sidebar .content-wrapper .content p {
+  line-height: 29px;
+  font-size: 18px;
+  color: #444;
+  padding: 10px;
+}
+.site-container .social-content-sidebar .content-wrapper .sidebar {
+  background: #00ffd2;
+  float: right;
+  width: 30%;
+  height: -webkit-fill-available;
+}
+
