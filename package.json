@@ -1,0 +1,28 @@
+{
+  "name": "cpt-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fariasf/CPT_Redesign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fariasf/CPT_Redesign/issues"
+  },
+  "homepage": "https://github.com/fariasf/CPT_Redesign#readme",
+  "devDependencies": {
+    "chalk": "^2.4.1",
+    "cli-table": "^0.3.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.6.1",
+    "gulp-louis": "^2.4.1",
+    "lighthouse": "^4.0.0-alpha.2-3.2.1",
+    "surge": "^0.20.1"
+  }
+}
