@@ -4,8 +4,8 @@ const gulp = require('gulp');
 const connect = require('gulp-connect');
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
+const louis = require('gulp-louis');
 const PORT = 8080;
-
 const Table = require('cli-table');
 const chalk = require('chalk');
 
@@ -42,12 +42,9 @@ const flags = {
   chromeFlags: ['--headless']
 };
 
-gulp.task('lighthouse', function() {
+gulp.task('lighthouse', ['server'], function(done) {
   console.log('Running lighthouse audit');
-  startServer();
-  return launchChromeAndRunLighthouse(`http://localhost:${PORT}/index.html`, flags).then(results => {
-	stopServer();
-
+  launchChromeAndRunLighthouse(`http://localhost:${PORT}/index.html`, flags).then(results => {
 	const audits = results.lhr.audits;
 
 	const metrics = [
@@ -74,8 +71,26 @@ gulp.task('lighthouse', function() {
 		table.push([ metric.title, metric.score, Math.round(metric.rawValue*100)/100, status ]);
 	}
 	console.log(table.toString());
-
+	done();
   });
 });
 
-gulp.task('default', ['lighthouse']);
+gulp.task('louis', ['server'], function(done) {
+  louis({
+    url: `http://localhost:${PORT}/index.html`,
+    timeout: 60,
+    viewport: '1280x1024',
+    engine: 'webkit',
+    userAgent: 'Chrome/37.0.2062.120',
+    noExternals: false,
+    performanceBudget: {
+      cssSize: 60000,
+      htmlSize: 40000,
+      imageSize: 10000,
+      jsSize: 0
+    }
+  }, done);
+});
+
+gulp.task('server', startServer);
+gulp.task('default', ['lighthouse', 'louis'], stopServer );
